@@ -30,9 +30,22 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
   - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
   - Generate with [our WordPress salts generator](https://roots.io/salts.html)
 
-3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
+3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site, or see below
+4. Set the document root on your webserver to `./web` folder: `/path/to/site/web/`
 5. Access WordPress admin at `https://example.com/wp/wp-admin/`
+
+## Add Theme(s)
+
+1. Clone Saga theme as git submodule:
+   ```sh
+   git submodule add https://github.com/minhchu/sage-example web/app/themes/saga
+   ```
+2. Install theme dependencies (See: web/app/themes/saga/README.md)
+   ```sh
+   cd web/app/themes/saga
+   yarn install
+   composer install
+   ```
 
 ## Documentation
 
